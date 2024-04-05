@@ -112,9 +112,23 @@ async def bothelp(ctx):
     await ctx.send("!skibidi")
     await ctx.send("!ip")
     await ctx.send("!therock")
+    await ctx.send("!sigma")
+    await ctx.send("!chinese")
+    await ctx.send("!nlgga")
+    await ctx.send("!bothelp")
+    await ctx.send("!botinfo")
 @bot.command()
 async def botinfo(ctx):
     await ctx.send("This bot is made by pipboy")
+    await ctx.send("https://github.com/birbpip/birbpip")
+@bot.command()
+async def deleteallmessages(ctx):
+    await ctx.channel.purge(limit=1000)
+    await ctx.send("Deleted all messages")
+
+@bot.command()
+async def roastniki(ctx):
+    await ctx.send("<@879686456002617414> you suck")
 
 
 
