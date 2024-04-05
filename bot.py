@@ -1,7 +1,7 @@
 from discord.ext import commands 
 import discord
 
-BOT_TOKEN = "MTIyNDEwNzIwNjkwMzg1NzE4Mw.GhUw34.amLwaNa5bqWqIOP-jwbdN7YOX_jfohsjkGFOoE"
+BOT_TOKEN = ""
 CHANNEL_ID = 1224270693039079525
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 rock = """
@@ -76,6 +76,8 @@ chineescopypasta = """⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣤⣀⠀⠀⠀⠀⠀�
 result = ""
 with open("ip.txt", "r") as file:
     result = file.read().replace("\n", "")
+with open("token.txt", "r") as file:
+    BOT_TOKEN = file.read().replace("\n", "")
 
 # will print ATCAGTGGAAACCCAGTGCTAGAGGATGGAATGACCTTAAATCAGGGACGATATTAAACGGAA
 
@@ -110,6 +112,9 @@ async def bothelp(ctx):
     await ctx.send("!skibidi")
     await ctx.send("!ip")
     await ctx.send("!therock")
+@bot.command()
+async def botinfo(ctx):
+    await ctx.send("This bot is made by pipboy")
 
 
 
